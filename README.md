@@ -1,2 +1,5 @@
-# Code-Reviews
- Code Reviews
+# The Frontend Developer Career Path
+
+# Module 8 Scrimba Bootcamp
+
+- Code Reviews
