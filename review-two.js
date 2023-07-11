@@ -1,31 +1,31 @@
-// Javascript guideline suggest camelCase for functions & variables
-// getDiscount
-function getdiscount(code) {
-  // Convert the value of to uppercase before finding a matching promo code
+// Add more comments for better understanding, good Job 👍
 
-  // Declare promo with const to prevent reassignment
+// Pay closer attention to indentation and semicolon consistency
+
+/* Javascript guidelines suggest using camelCasel for variable and function
+ getDiscount.
+ */
+function getdiscount(code) {
+  //  You should use code in uppercase to avoid any confusion in code object
   let promo = promos.find((promo) => promo.code === code);
-  //   Don't include console.log statements in production code
+  // Avoid console.log statement in produduction code
   console.log(promo);
-  /* 
-  Make this condition more concise without the !== comparison;  
-  onlu check if promo is truthy and active : promo && promo.isActive
-  */
+  /* The condition here could be more concise, without ==!
+  only check if promo is truthy and active: (promo && promo.isActive)  */
   if (promo !== undefined && promo.isActive) {
-    //   Don't include console.log statements in production code
+    // Consider leaving console.log statements out of production code
     console.log(`You get a ${promo.amount}% discount!`);
     return promo.amount / 100;
   }
   return 0;
 }
 
-// Pay attention to indentation and semicolon consistency
-// Javascript guideline suggest camelCase for functions & variables
+// Javascript guidelines suggest using camelCasel for variable and function
 // calculateFinalPrice
+
 function calculatefinalprice(basePrice, userCode) {
-  /* Similare to getDiscount, consider omitting  the else block and 
-    returning basePrice if condition is false 
-    */
+  /* Similar to getDiscount, consider omitting the else block and 
+  returning basePrice if the condition is false. */
   if (userCode) {
     const discount = getdiscount(userCode);
     const finalPrice = basePrice - basePrice * discount;
@@ -35,7 +35,7 @@ function calculatefinalprice(basePrice, userCode) {
   }
 }
 
-// Move this array at the top of the file for better code organization
+// You should move this array on top of the file page for better code oraganization
 const promos = [
   { code: "TOTALLY10", amount: 10, isActive: true },
   { code: "PLENTY20", amount: 20, isActive: false },
@@ -44,4 +44,5 @@ const promos = [
   { code: "YOLOFREE", amount: 100, isActive: false },
 ];
 
-console.log(calculatefinalprice(500, "PLENTY20"));
+// You code is clean and understable 👍
+console.log(calculatefinalprice(500, "WHOPPING75"));

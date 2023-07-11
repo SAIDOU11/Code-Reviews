@@ -1,26 +1,26 @@
-// Pay attention to code indentation and semicolon consistency
+// 1. Aim to Understand the code
 
-/* Javascript guideline suggest camelCase for variable and function names
-ex : calculatePrice, finalPrice
-*/
+/* Javascript guideline suggest using camelCase for variable & function name
+ex : calculatePrice, finalPrice, */
+
+// Pay closer attention to code indentation and semicolon cosistency
 
 function calculate_price(basePrice) {
-  // Don't include console.log statements in production code
+  // Let's not include console.log statements in production code
   console.log("Calculating final price");
-  //   Declare the discount with const to prevent reassignment
+  // Declare the discount variable with const to prevent reassignment
   let discount = getDiscount(basePrice);
   const final_price = basePrice - discount;
   return final_price;
 }
 
-// Declare getDiscount with const to prevent reassignment, or change this to a named function
-
+// Declare getDiscount with const to prevent reassignement, or change this to a named function.
 let getDiscount = function (basePrice) {
-  // This code is unnused, please remove it !
+  // This variable is unused, please remove it.
   let currentDiscount = 0;
-  /*   What do you think about returning the value using a ternary operator
-        to make the function more concise?
-  */
+
+  // What to you think about returning the value using a ternary operatout returning
+  // to make the function more consice?
   if (basePrice > 100) {
     return 20;
   } else {
@@ -28,6 +28,5 @@ let getDiscount = function (basePrice) {
   }
 };
 
+// For testing purpose log
 console.log(`The final price is $${calculate_price(105)}`);
-
-// 1. Aim to Understand the code
