@@ -1,11 +1,14 @@
+/* Put font-family in body, for DRYer code */
+
 html,
 body {
   margin: 0;
   padding: 0;
+  font-family: "Inter", sans-serif;
 }
 
 .generate-pw-container {
-  min-width: 600px;
+  max-width: 600px;
   margin: 0 auto;
   padding: 1em;
   height: 100vh;
@@ -16,7 +19,6 @@ body {
 }
 
 .title {
-  font-family: "Inter", sans-serif;
   font-size: 40px;
   font-style: normal;
   font-weight: 400;
@@ -26,33 +28,32 @@ body {
   margin-bottom: 0;
 }
 
-.title .accent-text {
+.title .accent-txt {
   color: #55f991;
   display: block;
 }
 
 .subtitle {
-  font-family: "Inter", sans-serif;
   font-weight: 400;
-  font-size: 20px;
-  line-height: 28px;
+  font-size: 1.25rem;
+  line-height: 1.5;
   color: #6b7280;
   margin-top: 0;
 }
 
 .generate-passwords-btn,
 .change-password-length {
-  font-family: "Inter", sans-serif;
   font-size: 1rem;
   font-weight: 500;
-  line-height: 1.5;
+  line-height: 24px;
   background: #10b981;
   color: #fff;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  padding: 0.7em 1.2em;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
   border-radius: 6px;
 }
 
@@ -68,11 +69,14 @@ body {
 }
 
 .display-passwords-container {
-  display: grid;
+  /* remplace by flex */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   max-width: 600px;
-  grid-template-columns: repeat(2, auto);
+  /* grid-template-columns: repeat(2, auto);
   grid-template-rows: repeat(2, auto);
-  grid-gap: 1em;
+  grid-gap: 1em; */
   margin: 4em auto;
   padding: 1.5em;
 }
@@ -99,7 +103,8 @@ body {
   grid-row: 2;
 }
 
-@media (max-width: 45px) {
+/* Good job using media queries 👍 */
+@media (max-width: 450px) {
   .display-passwords-container {
     margin-top: 1em;
     display: flex;
@@ -108,6 +113,8 @@ body {
   .actions {
     display: flex;
     flex-direction: column;
+    /* Add align-items: center; for better sizing */
+    align-items: center;
     margin: 1em;
   }
   .actions > button {
